@@ -78,9 +78,9 @@
         /* Botão Flutuante do WhatsApp */
         .whatsapp-widget-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; border: none; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); cursor: pointer; z-index: 99; text-decoration: none; }
 
-        /* MODAL WEBCHAT DO ROBÔ EDU (Isolamento total com display: none !important quando fechado) */
-        .chat-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none !important; align-items: center; justify-content: center; padding: 12px; }
-        .chat-modal.active { display: flex !important; }
+        /* MODAL WEBCHAT DO ROBÔ EDU - Totalmente Oculto por Padrão */
+        #modalEdu { display: none !important; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center; padding: 12px; }
+        #modalEdu.active { display: flex !important; }
         .chat-modal-content { background: #f8fafc; border-radius: 18px; width: 100%; max-width: 420px; height: 90vh; max-height: 600px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }
         .chat-modal-header { background: #1a3a5c; color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
         .chat-header-user { display: flex; align-items: center; gap: 10px; }
@@ -111,7 +111,7 @@
                 <div class="brand-subtitle">Educação que aproxima</div>
             </div>
         </div>
-        <button id="btnEduHeader" class="header-btn-chat">
+        <button onclick="abrirModalEdu()" class="header-btn-chat">
             <i class="fa-solid fa-robot"></i> Edu
         </button>
     </header>
@@ -141,7 +141,7 @@
                     <h3 class="card-item-title">Trânsito, NRs & Reciclagem</h3>
                     <p class="card-item-text">MOPP, Escolar, Coletivo, Emergência, Carga Indivisível, Motofrete, NRs e Reciclagem de CNH.</p>
                 </div>
-                <button class="card-btn-action" data-opcao="ESP"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('ESP')"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <div class="card-item">
@@ -150,7 +150,7 @@
                     <h3 class="card-item-title">Graduação & Pós FASUL</h3>
                     <p class="card-item-text">Graduação, pós-graduação e cursos técnicos para ampliar sua formação profissional.</p>
                 </div>
-                <button class="card-btn-action" data-opcao="FASUL"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('FASUL')"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <div class="card-item">
@@ -159,7 +159,7 @@
                     <h3 class="card-item-title">Cursos de IA FASUL</h3>
                     <p class="card-item-text">Conheça formações focadas em inteligência artificial, inovação e novas tecnologias.</p>
                 </div>
-                <button class="card-btn-action" data-opcao="IA"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('IA')"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
             <div class="card-item">
@@ -168,7 +168,7 @@
                     <h3 class="card-item-title">Cursos Livres FASUL</h3>
                     <p class="card-item-text">Cursos livres e capacitações práticas para desenvolver novas habilidades com flexibilidade.</p>
                 </div>
-                <button class="card-btn-action" data-opcao="LIVRES"><i class="fa-solid fa-arrow-right"></i></button>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('LIVRES')"><i class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
 
@@ -204,22 +204,22 @@
             <p class="section-desc">Respostas diretas para as principais dúvidas dos nossos alunos e parceiros.</p>
 
             <div class="faq-item">
-                <button class="faq-question">Os cursos de trânsito são reconhecidos pelo SENATRAN? <span>+</span></button>
+                <button class="faq-question" onclick="toggleFaq(this)">Os cursos de trânsito são reconhecidos pelo SENATRAN? <span>+</span></button>
                 <div class="faq-answer">Sim! Todos os cursos de especialização (MOPP, Coletivo, Escolar, etc.) são 100% homologados e possuem validade em todo o território nacional.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como funciona a certificação da FASUL Educacional? <span>+</span></button>
+                <button class="faq-question" onclick="toggleFaq(this)">Como funciona a certificação da FASUL Educacional? <span>+</span></button>
                 <div class="faq-answer">A FASUL oferece cursos de Graduação, Pós-Graduação e Capacitação em parceria acadêmica sólida, garantindo suporte completo, alta qualidade de ensino e certificados válidos para progressão de carreira.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como posso me tornar um afiliado e revender os cursos? <span>+</span></button>
+                <button class="faq-question" onclick="toggleFaq(this)">Como posso me tornar um afiliado e revender os cursos? <span>+</span></button>
                 <div class="faq-answer">Basta clicar na opção de Afiliados no menu do site ou solicitar o atendimento humanizado via WhatsApp. Você adquire por R$ 250,00 e revende por R$ 350,00, garantindo R$ 100,00 de lucro por aluno.</div>
             </div>
 
             <div class="faq-item">
-                <button class="faq-question">Como recebo meu certificado ou comprovação? <span>+</span></button>
+                <button class="faq-question" onclick="toggleFaq(this)">Como recebo meu certificado ou comprovação? <span>+</span></button>
                 <div class="faq-answer">Após a conclusão das etapas do curso e confirmação da documentação (como o envio da CNH para os cursos especializados), a emissão é processada e disponibilizada com total agilidade.</div>
             </div>
         </div>
@@ -272,249 +272,243 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- MODAL WEBCHAT DO ROBÔ EDU -->
-                <div class="chat-modal-body" id="chatMessages"></div>
+      <!-- MODAL WEBCHAT DO ROBÔ EDU -->
+    <div class="chat-modal" id="modalEdu">
+        <div class="chat-modal-content">
+            <div class="chat-modal-header">
+                <div class="chat-header-user">
+                    <div class="chat-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div>
+                        <strong style="font-size:0.95rem">Edu • Assistente virtual</strong><br>
+                        <small style="color:#4ade80; font-size:0.75rem">● Online agora</small>
+                    </div>
+                </div>
+                <button onclick="fecharModalEdu()" style="background:none; border:none; color:white; font-size:1.3rem; cursor:pointer">✕</button>
+            </div>
+            
+            <div class="chat-modal-body" id="chatMessages"></div>
 
             <div class="chat-modal-footer">
-                <input type="text" id="chatInput" class="chat-input-field" placeholder="Digite sua resposta...">
-                <button id="btnEnviarMsg" class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+                <input type="text" id="chatInput" class="chat-input-field" placeholder="Digite sua resposta..." onkeypress="handleKeyPress(event)">
+                <button onclick="enviarMensagemTexto()" class="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const WHATSAPP_SUPORTE = "5551980244441";
+        var WHATSAPP_SUPORTE = "5551980244441";
 
-            const PLANILHA_FASUL = {
-                "administracao": { nome: "Graduação em Administração", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
-                "pedagogia": { nome: "Graduação em Pedagogia", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
-                "pos transito": { nome: "Pós em Gestão de Trânsito", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
-                "ia": { nome: "Curso de IA & Novas Tecnologias", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" }
-            };
+        var PLANILHA_FASUL = {
+            "administracao": { nome: "Graduação em Administração", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "pedagogia": { nome: "Graduação em Pedagogia", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "pos transito": { nome: "Pós em Gestão de Trânsito", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "ia": { nome: "Curso de IA & Novas Tecnologias", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" }
+        };
 
-            const PLANILHA_ESPECIALIZADOS = {
-                "mopp": { nome: "MOPP / Produtos Perigosos", preco: 350.00 },
-                "escolar": { nome: "Transporte Escolar", preco: 350.00 },
-                "coletivo": { nome: "Transporte Coletivo", preco: 350.00 },
-                "nr35": { nome: "NR 35 - Trabalho em Altura", preco: 220.00 },
-                "reciclagem": { nome: "Reciclagem de CNH", preco: 150.00 }
-            };
+        var PLANILHA_ESPECIALIZADOS = {
+            "mopp": { nome: "MOPP / Produtos Perigosos", preco: 350.00 },
+            "escolar": { nome: "Transporte Escolar", preco: 350.00 },
+            "coletivo": { nome: "Transporte Coletivo", preco: 350.00 },
+            "nr35": { nome: "NR 35 - Trabalho em Altura", preco: 220.00 },
+            "reciclagem": { nome: "Reciclagem de CNH", preco: 150.00 }
+        };
 
-            let estadoChat = "INICIO";
-            let cursoSelecionado = null;
-            let dadosForm = {};
+        var estadoChat = "INICIO";
+        var cursoSelecionado = null;
+        var dadosForm = {};
 
-            // Configuração do FAQ Sanfona
-            document.querySelectorAll(".faq-question").forEach(function(btn) {
-                btn.addEventListener("click", function() {
-                    const item = this.parentElement;
-                    item.classList.toggle('active');
-                    const span = this.querySelector('span');
-                    if (span) {
-                        span.textContent = item.classList.contains('active') ? '-' : '+';
-                    }
+        function toggleFaq(btn) {
+            var item = btn.parentElement;
+            item.classList.toggle('active');
+            var span = btn.querySelector('span');
+            if (span) {
+                span.textContent = item.classList.contains('active') ? '-' : '+';
+            }
+        }
+
+        function abrirModalEdu() {
+            var m = document.getElementById("modalEdu");
+            if (m) m.classList.add("active");
+            if (document.getElementById("chatMessages").children.length === 0) {
+                renderMenuInicial();
+            }
+        }
+
+        function fecharModalEdu() {
+            var m = document.getElementById("modalEdu");
+            if (m) m.classList.remove("active");
+        }
+
+        function abrirEduComOpcao(tipo) {
+            abrirModalEdu();
+            tratarOpcao(tipo);
+        }
+
+        function appendBotMsg(txt, options) {
+            var body = document.getElementById("chatMessages");
+            var div = document.createElement("div");
+            div.className = "chat-bubble-bot";
+            div.innerHTML = txt;
+            
+            if (options) {
+                var optContainer = document.createElement("div");
+                optContainer.className = "chat-options-container";
+                options.forEach(function(opt) {
+                    var b = document.createElement("button");
+                    b.className = "chat-option-btn";
+                    b.innerHTML = opt.label + ' <i class="fa-solid fa-chevron-right" style="font-size:0.75rem; color:#94a3b8"></i>';
+                    b.onclick = function() { tratarOpcao(opt.val); };
+                    optContainer.appendChild(b);
                 });
-            });
-
-            const modalEdu = document.getElementById("modalEdu");
-            const btnEduHeader = document.getElementById("btnEduHeader");
-            const btnFecharEdu = document.getElementById("btnFecharEdu");
-            const btnEnviarMsg = document.getElementById("btnEnviarMsg");
-            const chatInput = document.getElementById("chatInput");
-
-            function abrirModalEdu() {
-                modalEdu.classList.add("active");
-                if (document.getElementById("chatMessages").children.length === 0) {
-                    renderMenuInicial();
-                }
+                div.appendChild(optContainer);
             }
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
 
-            function fecharModalEdu() {
-                modalEdu.classList.remove("active");
-            }
+        function appendUserMsg(txt) {
+            var body = document.getElementById("chatMessages");
+            var div = document.createElement("div");
+            div.className = "chat-bubble-user";
+            div.innerText = txt;
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
 
-            if (btnEduHeader) btnEduHeader.addEventListener("click", abrirModalEdu);
-            if (btnFecharEdu) btnFecharEdu.addEventListener("click", fecharModalEdu);
+        function renderMenuInicial() {
+            estadoChat = "MENU_INICIAL";
+            appendBotMsg("Olá! Eu sou o Edu, assistente virtual do Portal Cursos EAD.<br>Como posso ajudar você hoje?");
+            appendBotMsg("Escolha uma opção pelos botões abaixo:", [
+                { label: "🚗 Cursos Especializados, NRs & Reciclagem", val: "ESP" },
+                { label: "🎓 FASUL Educacional (Graduação/Pós)", val: "FASUL" },
+                { label: "💼 Seja um Afiliado / Trabalhe Conosco", val: "AFILIADO" },
+                { label: "💬 Atendimento via WhatsApp", val: "WHATSAPP_DIRETO" }
+            ]);
+        }
 
-            document.querySelectorAll(".card-btn-action").forEach(function(btn) {
-                btn.addEventListener("click", function() {
-                    const op = this.getAttribute("data-opcao");
-                    abrirModalEdu();
-                    tratarOpcao(op);
-                });
-            });
-
-            function appendBotMsg(txt, options) {
-                const body = document.getElementById("chatMessages");
-                const div = document.createElement("div");
-                div.className = "chat-bubble-bot";
-                div.innerHTML = txt;
-                
-                if (options) {
-                    const optContainer = document.createElement("div");
-                    optContainer.className = "chat-options-container";
-                    options.forEach(function(opt) {
-                        const b = document.createElement("button");
-                        b.className = "chat-option-btn";
-                        b.innerHTML = opt.label + ' <i class="fa-solid fa-chevron-right" style="font-size:0.75rem; color:#94a3b8"></i>';
-                        b.addEventListener("click", function() {
-                            tratarOpcao(opt.val);
-                        });
-                        optContainer.appendChild(b);
-                    });
-                    div.appendChild(optContainer);
-                }
-                body.appendChild(div);
-                body.scrollTop = body.scrollHeight;
-            }
-
-            function appendUserMsg(txt) {
-                const body = document.getElementById("chatMessages");
-                const div = document.createElement("div");
-                div.className = "chat-bubble-user";
-                div.innerText = txt;
-                body.appendChild(div);
-                body.scrollTop = body.scrollHeight;
-            }
-
-            function renderMenuInicial() {
-                estadoChat = "MENU_INICIAL";
-                appendBotMsg("Olá! Eu sou o Edu, assistente virtual do Portal Cursos EAD.<br>Como posso ajudar você hoje?");
-                appendBotMsg("Escolha uma opção pelos botões abaixo:", [
-                    { label: "🚗 Cursos Especializados, NRs & Reciclagem", val: "ESP" },
-                    { label: "🎓 FASUL Educacional (Graduação/Pós)", val: "FASUL" },
-                    { label: "💼 Seja um Afiliado / Trabalhe Conosco", val: "AFILIADO" },
-                    { label: "💬 Atendimento via WhatsApp", val: "WHATSAPP_DIRETO" }
+        function tratarOpcao(val) {
+            if (val === "ESP") {
+                appendUserMsg("🚗 Cursos Especializados, NRs & Reciclagem");
+                estadoChat = "INTENCAO_ESP";
+                appendBotMsg("Os Cursos Especializados Brasil são 100% homologados pelo SENATRAN. Qual é o seu objetivo?", [
+                    { label: "A — Adquirir o curso para meu uso / habilitação", val: "COMPRAR_ESP" },
+                    { label: "B — Revender os cursos / Trabalhar como Afiliado", val: "AFILIADO" }
                 ]);
+            } else if (val === "COMPRAR_ESP") {
+                appendUserMsg("A — Adquirir o curso para meu uso");
+                estadoChat = "LISTA_ESP";
+                appendBotMsg("Confira os valores e selecione o curso desejado:", [
+                    { label: "MOPP — R$ 350,00", val: "mopp" },
+                    { label: "Transporte Escolar — R$ 350,00", val: "escolar" },
+                    { label: "Transporte Coletivo — R$ 350,00", val: "coletivo" },
+                    { label: "NR 35 — R$ 220,00", val: "nr35" }
+                ]);
+            } else if (val === "FASUL" || val === "IA" || val === "LIVRES") {
+                appendUserMsg("🎓 FASUL Educacional");
+                estadoChat = "MODALIDADE_FASUL";
+                appendBotMsg("A FASUL Educacional oferece cursos superiores e pós-graduação. Escolha a modalidade:", [
+                    { label: "1. Graduação", val: "F_GRAD" },
+                    { label: "2. Pós-Graduação", val: "F_POS" },
+                    { label: "3. Cursos Livres & Capacitação", val: "F_LIVRES" },
+                    { label: "4. Cursos de Inteligência Artificial (IA)", val: "F_IA" }
+                ]);
+            } else if (val.indexOf("F_") === 0) {
+                estadoChat = "PERGUNTAR_NOME_CURSO_FASUL";
+                appendBotMsg("Qual é o nome do curso que você procura na FASUL?");
+            } else if (val === "AFILIADO") {
+                appendUserMsg("💼 Seja um Afiliado / Trabalhe Conosco");
+                estadoChat = "FORM_AFILIADO_NOME";
+                appendBotMsg("Tabela Comercial de Revenda:<br>• Compra do parceiro: R$ 250,00<br>• Venda sugerida: R$ 350,00<br>• Lucro: R$ 100,00 por aluno.");
+                appendBotMsg("Para solicitar sua afiliação, informe seu nome completo.");
+            } else if (val === "WHATSAPP_DIRETO") {
+                encaminharWhatsappDireto("Olá! Gostaria de atendimento sobre os cursos.");
+            } else if (val === "FASUL_SIM") {
+                appendUserMsg("SIM, consegui acessar");
+                appendBotMsg("🎉 Excelente! O Portal Cursos EAD agradece seu contato. Bons estudos!");
+            } else if (val === "FASUL_NAO") {
+                appendUserMsg("NÃO, preciso de ajuda");
+                estadoChat = "FORM_FASUL_NOME";
+                appendBotMsg("Entendido! Vamos te ajudar pessoalmente. Por favor, digite o seu nome completo:");
+            } else if (PLANILHA_ESPECIALIZADOS[val]) {
+                cursoSelecionado = PLANILHA_ESPECIALIZADOS[val];
+                estadoChat = "FORM_ESP_NOME";
+                appendBotMsg("Inscrição para **" + cursoSelecionado.nome + "** (R$ " + cursoSelecionado.preco.toFixed(2) + ").<br><br>Digite seu nome completo:");
             }
+        }
 
-            function tratarOpcao(val) {
-                if (val === "ESP") {
-                    appendUserMsg("🚗 Cursos Especializados, NRs & Reciclagem");
-                    estadoChat = "INTENCAO_ESP";
-                    appendBotMsg("Os Cursos Especializados Brasil são 100% homologados pelo SENATRAN. Qual é o seu objetivo?", [
-                        { label: "A — Adquirir o curso para meu uso / habilitação", val: "COMPRAR_ESP" },
-                        { label: "B — Revender os cursos / Trabalhar como Afiliado", val: "AFILIADO" }
-                    ]);
-                } else if (val === "COMPRAR_ESP") {
-                    appendUserMsg("A — Adquirir o curso para meu uso");
-                    estadoChat = "LISTA_ESP";
-                    appendBotMsg("Confira os valores e selecione o curso desejado:", [
-                        { label: "MOPP — R$ 350,00", val: "mopp" },
-                        { label: "Transporte Escolar — R$ 350,00", val: "escolar" },
-                        { label: "Transporte Coletivo — R$ 350,00", val: "coletivo" },
-                        { label: "NR 35 — R$ 220,00", val: "nr35" }
-                    ]);
-                } else if (val === "FASUL" || val === "IA" || val === "LIVRES") {
-                    appendUserMsg("🎓 FASUL Educacional");
-                    estadoChat = "MODALIDADE_FASUL";
-                    appendBotMsg("A FASUL Educacional oferece cursos superiores e pós-graduação. Escolha a modalidade:", [
-                        { label: "1. Graduação", val: "F_GRAD" },
-                        { label: "2. Pós-Graduação", val: "F_POS" },
-                        { label: "3. Cursos Livres & Capacitação", val: "F_LIVRES" },
-                        { label: "4. Cursos de Inteligência Artificial (IA)", val: "F_IA" }
-                    ]);
-                } else if (val.startsWith("F_")) {
-                    estadoChat = "PERGUNTAR_NOME_CURSO_FASUL";
-                    appendBotMsg("Qual é o nome do curso que você procura na FASUL?");
-                } else if (val === "AFILIADO") {
-                    appendUserMsg("💼 Seja um Afiliado / Trabalhe Conosco");
-                    estadoChat = "FORM_AFILIADO_NOME";
-                    appendBotMsg("Tabela Comercial de Revenda:<br>• Compra do parceiro: R$ 250,00<br>• Venda sugerida: R$ 350,00<br>• Lucro: R$ 100,00 por aluno.");
-                    appendBotMsg("Para solicitar sua afiliação, informe seu nome completo.");
-                } else if (val === "WHATSAPP_DIRETO") {
-                    encaminharWhatsappDireto("Olá! Gostaria de atendimento sobre os cursos.");
-                } else if (val === "FASUL_SIM") {
-                    appendUserMsg("SIM, consegui acessar");
-                    appendBotMsg("🎉 Excelente! O Portal Cursos EAD agradece seu contato. Bons estudos!");
-                } else if (val === "FASUL_NAO") {
-                    appendUserMsg("NÃO, preciso de ajuda");
-                    estadoChat = "FORM_FASUL_NOME";
-                    appendBotMsg("Entendido! Vamos te ajudar pessoalmente. Por favor, digite o seu nome completo:");
-                } else if (PLANILHA_ESPECIALIZADOS[val]) {
-                    cursoSelecionado = PLANILHA_ESPECIALIZADOS[val];
-                    estadoChat = "FORM_ESP_NOME";
-                    appendBotMsg("Inscrição para **" + cursoSelecionado.nome + "** (R$ " + cursoSelecionado.preco.toFixed(2) + ").<br><br>Digite seu nome completo:");
-                }
-            }
+        function enviarMensagemTexto() {
+            var chatInput = document.getElementById("chatInput");
+            var txt = chatInput.value.trim();
+            if (!txt) return;
 
-            function enviarMensagemTexto() {
-                const txt = chatInput.value.trim();
-                if (!txt) return;
+            appendUserMsg(txt);
+            chatInput.value = "";
 
-                appendUserMsg(txt);
-                chatInput.value = "";
-
-                if (estadoChat === "PERGUNTAR_NOME_CURSO_FASUL") {
-                    let cursoAchado = null;
-                    for (let k in PLANILHA_FASUL) {
-                        if (txt.toLowerCase().includes(k)) {
-                            cursoAchado = PLANILHA_FASUL[k];
-                            break;
-                        }
+            if (estadoChat === "PERGUNTAR_NOME_CURSO_FASUL") {
+                var cursoAchado = null;
+                for (var k in PLANILHA_FASUL) {
+                    if (txt.toLowerCase().indexOf(k) !== -1) {
+                        cursoAchado = PLANILHA_FASUL[k];
+                        break;
                     }
-                    if (!cursoAchado) {
-                        cursoAchado = { nome: txt, link: "https://docs.google.com/spreadsheets/d/1y6JHACipvAPre6vJiR7aDiVfzYTDvUc2XbzBsYfF6Aw/edit?usp=drivesdk" };
-                    }
-
-                    cursoSelecionado = cursoAchado;
-                    appendBotMsg("Link de Cadastro da FASUL localizado:<br>👉 <strong>" + cursoAchado.nome + "</strong><a href='" + cursoAchado.link + "' target='_blank' class='btn-link-action'>🔗 Abrir Cadastro FASUL</a>");
-                    
-                    setTimeout(function() {
-                        estadoChat = "CHECAR_ACESSO_FASUL";
-                        appendBotMsg("Você conseguiu acessar o link de cadastro do curso?", [
-                            { label: "SIM, consegui acessar", val: "FASUL_SIM" },
-                            { label: "NÃO, preciso de ajuda", val: "FASUL_NAO" }
-                        ]);
-                    }, 3000);
-
-                } else if (estadoChat === "FORM_ESP_NOME") {
-                    dadosForm.nome = txt;
-                    estadoChat = "FORM_ESP_CPF";
-                    appendBotMsg("Obrigado! Agora digite o seu CPF:");
-                } else if (estadoChat === "FORM_ESP_CPF") {
-                    dadosForm.cpf = txt;
-                    estadoChat = "FORM_ESP_NASC";
-                    appendBotMsg("Digite o seu Ano de Nascimento:");
-                } else if (estadoChat === "FORM_ESP_NASC") {
-                    dadosForm.nasc = txt;
-                    let msgWp = encodeURIComponent("NOVA INSCRICAO - " + cursoSelecionado.nome + "\nNome: " + dadosForm.nome + "\nCPF: " + dadosForm.cpf + "\nNascimento: " + dadosForm.nasc);
-                    appendBotMsg("Clique abaixo para enviar sua ficha no WhatsApp:");
-                    appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWp + "' target='_blank' class='btn-link-action'>💬 Concluir Inscrição no WhatsApp</a>");
-                } else if (estadoChat === "FORM_AFILIADO_NOME") {
-                    let msgWp = encodeURIComponent("SOLICITACAO DE AFILIACAO\nNome: " + txt);
-                    appendBotMsg("Clique no botão abaixo para concluir sua solicitação de afiliação:");
-                    appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWp + "' target='_blank' class='btn-link-action'>💼 Concluir no WhatsApp</a>");
-                } else if (estadoChat === "FORM_FASUL_NOME") {
-                    dadosForm.nome = txt;
-                    estadoChat = "FORM_FASUL_CPF";
-                    appendBotMsg("Digite o seu CPF:");
-                } else if (estadoChat === "FORM_FASUL_CPF") {
-                    dadosForm.cpf = txt;
-                    estadoChat = "FORM_FASUL_NASC";
-                    appendBotMsg("Digite o seu Ano de Nascimento:");
-                } else if (estadoChat === "FORM_FASUL_NASC") {
-                    dadosForm.nasc = txt;
-                    let msgWp = encodeURIComponent("RESGATE CADASTRO FASUL\nCurso: " + (cursoSelecionado ? cursoSelecionado.nome : 'FASUL') + "\nNome: " + dadosForm.nome + "\nCPF: " + dadosForm.cpf + "\nNascimento: " + dadosForm.nasc);
-                    appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWp + "' target='_blank' class='btn-link-action'>💬 Falar com Atendimento</a>");
-                } else {
-                    encaminharWhatsappDireto(txt);
                 }
-            }
+                if (!cursoAchado) {
+                    cursoAchado = { nome: txt, link: "https://docs.google.com/spreadsheets/d/1y6JHACipvAPre6vJiR7aDiVfzYTDvUc2XbzBsYfF6Aw/edit?usp=drivesdk" };
+                }
 
-            if (btnEnviarMsg) btnEnviarMsg.addEventListener("click", enviarMensagemTexto);
-            if (chatInput) {
-                chatInput.addEventListener("keypress", function(e) {
-                    if (e.key === 'Enter') enviarMensagemTexto();
-                });
-            }
+                cursoSelecionado = cursoAchado;
+                appendBotMsg("Link de Cadastro da FASUL localizado:<br>👉 <strong>" + cursoAchado.nome + "</strong><a href='" + cursoAchado.link + "' target='_blank' class='btn-link-action'>🔗 Abrir Cadastro FASUL</a>");
+                
+                setTimeout(function() {
+                    estadoChat = "CHECAR_ACESSO_FASUL";
+                    appendBotMsg("Você conseguiu acessar o link de cadastro do curso?", [
+                        { label: "SIM, consegui acessar", val: "FASUL_SIM" },
+                        { label: "NÃO, preciso de ajuda", val: "FASUL_NAO" }
+                    ]);
+                }, 3000);
 
-            function encaminharWhatsappDireto(txt) {
-                let msg = encodeURIComponent("Olá! Preciso de informações sobre: " + txt);
-                window.open("https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msg, '_blank');
+            } else if (estadoChat === "FORM_ESP_NOME") {
+                dadosForm.nome = txt;
+                estadoChat = "FORM_ESP_CPF";
+                appendBotMsg("Obrigado! Agora digite o seu CPF:");
+            } else if (estadoChat === "FORM_ESP_CPF") {
+                dadosForm.cpf = txt;
+                estadoChat = "FORM_ESP_NASC";
+                appendBotMsg("Digite o seu Ano de Nascimento:");
+            } else if (estadoChat === "FORM_ESP_NASC") {
+                dadosForm.nasc = txt;
+                var msgWp = encodeURIComponent("NOVA INSCRICAO - " + cursoSelecionado.nome + "\nNome: " + dadosForm.nome + "\nCPF: " + dadosForm.cpf + "\nNascimento: " + dadosForm.nasc);
+                appendBotMsg("Clique abaixo para enviar sua ficha no WhatsApp:");
+                appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWp + "' target='_blank' class='btn-link-action'>💬 Concluir Inscrição no WhatsApp</a>");
+            } else if (estadoChat === "FORM_AFILIADO_NOME") {
+                var msgWpA = encodeURIComponent("SOLICITACAO DE AFILIACAO\nNome: " + txt);
+                appendBotMsg("Clique no botão abaixo para concluir sua solicitação de afiliação:");
+                appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWpA + "' target='_blank' class='btn-link-action'>💼 Concluir no WhatsApp</a>");
+            } else if (estadoChat === "FORM_FASUL_NOME") {
+                dadosForm.nome = txt;
+                estadoChat = "FORM_FASUL_CPF";
+                appendBotMsg("Digite o seu CPF:");
+            } else if (estadoChat === "FORM_FASUL_CPF") {
+                dadosForm.cpf = txt;
+                estadoChat = "FORM_FASUL_NASC";
+                appendBotMsg("Digite o seu Ano de Nascimento:");
+            } else if (estadoChat === "FORM_FASUL_NASC") {
+                dadosForm.nasc = txt;
+                var msgWpF = encodeURIComponent("RESGATE CADASTRO FASUL\nCurso: " + (cursoSelecionado ? cursoSelecionado.nome : 'FASUL') + "\nNome: " + dadosForm.nome + "\nCPF: " + dadosForm.cpf + "\nNascimento: " + dadosForm.nasc);
+                appendBotMsg("<a href='https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msgWpF + "' target='_blank' class='btn-link-action'>💬 Falar com Atendimento</a>");
+            } else {
+                encaminharWhatsappDireto(txt);
             }
-        });
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') enviarMensagemTexto();
+        }
+
+        function encaminharWhatsappDireto(txt) {
+            var msg = encodeURIComponent("Olá! Preciso de informações sobre: " + txt);
+            window.open("https://wa.me/" + WHATSAPP_SUPORTE + "?text=" + msg, '_blank');
+        }
     </script>
 </body>
 </html>
