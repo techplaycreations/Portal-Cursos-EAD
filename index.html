@@ -1,1 +1,510 @@
-<html><head><meta content="text/html; charset=UTF-8" http-equiv="content-type"></head><body class="doc-content" style="background-color:#ffffff;max-width:468pt;padding:72pt 72pt 72pt 72pt"><p style="padding:0;margin:0;color:#000000;font-size:11pt;font-family:&quot;Arial&quot;;line-height:1.0;height:11pt;text-align:left"><span style="color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:&quot;Arial&quot;;font-style:normal"></span></p><p style="padding:0;margin:0;color:#000000;font-size:11pt;font-family:&quot;Arial&quot;;line-height:1.0;text-align:left"><span style="color:#000000;font-weight:400;text-decoration:none;vertical-align:baseline;font-size:11pt;font-family:&quot;Courier&quot;;font-style:normal">&lt;!DOCTYPE html&gt;<br>&lt;html lang=&quot;pt-BR&quot;&gt;<br>&lt;head&gt;<br> &nbsp; &nbsp;&lt;meta charset=&quot;UTF-8&quot;&gt;<br> &nbsp; &nbsp;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br> &nbsp; &nbsp;&lt;title&gt;Portal Cursos EAD | Educa&ccedil;&atilde;o que aproxima&lt;/title&gt;<br> &nbsp; &nbsp;&lt;!-- FontAwesome para &Iacute;cones Oficiais --&gt;<br> &nbsp; &nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css&quot;&gt;<br> &nbsp; &nbsp;&lt;style&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;* { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif; }<br> &nbsp; &nbsp; &nbsp; &nbsp;body { background-color: #f4f7f6; color: #1e293b; display: flex; flex-direction: column; min-height: 100vh; }<br> &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;/* Header Principal */<br> &nbsp; &nbsp; &nbsp; &nbsp;header { background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 90; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.brand-container { display: flex; align-items: center; gap: 12px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.brand-icon { background: #1f4e79; color: white; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.brand-title { font-size: 1.05rem; font-weight: 800; color: #1f4e79; line-height: 1.1; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.brand-subtitle { font-size: 0.75rem; color: #64748b; font-weight: 500; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.header-btn-chat { background: #25d366; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: bold; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Banner Hero */<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero { background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url(&#39;https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1000&amp;q=80&#39;); background-size: cover; background-position: center; color: white; padding: 45px 20px; text-align: left; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero-badge { background: #00d26a; color: #022c16; font-size: 0.7rem; font-weight: 800; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 14px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; line-height: 1.25; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero-desc { font-size: 0.95rem; color: #e2e8f0; line-height: 1.5; margin-bottom: 24px; max-width: 600px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero-features { display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; color: #f8fafc; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.hero-feature-item { display: flex; align-items: center; gap: 6px; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Container de Conte&uacute;do */<br> &nbsp; &nbsp; &nbsp; &nbsp;.section-container { max-width: 900px; margin: 30px auto; padding: 0 16px; width: 100%; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.sub-header { font-size: 0.75rem; font-weight: 800; color: #1f4e79; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.section-title { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.section-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 24px; line-height: 1.4; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Cards de Modalidades */<br> &nbsp; &nbsp; &nbsp; &nbsp;.cards-grid { display: flex; flex-direction: column; gap: 16px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-item { background: white; border-radius: 16px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-left { flex: 1; padding-right: 15px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-icon-wrapper { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 12px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-icon-blue { background: #e0f2fe; color: #0284c7; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-icon-green { background: #dcfce7; color: #16a34a; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-icon-purple { background: #f3e8ff; color: #9333ea; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-icon-orange { background: #ffedd5; color: #ea580c; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-item-title { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 6px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-item-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.card-btn-action { background: #1f4e79; color: white; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; font-size: 1rem; flex-shrink: 0; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Card de Afiliados */<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-box { background: #1a3a5c; border-radius: 16px; padding: 24px; color: white; margin-top: 15px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-title { font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-card-small { background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-card-green { background: #00d26a; color: #022c16; padding: 14px; border-radius: 10px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.aff-label { font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 4px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.aff-value { font-size: 1.25rem; font-weight: 800; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.affiliate-margin-card { background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Se&ccedil;&atilde;o FAQ Sanfona */<br> &nbsp; &nbsp; &nbsp; &nbsp;.faq-container { margin-top: 40px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.faq-question { padding: 16px; font-weight: 700; font-size: 0.95rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center; cursor: pointer; background: white; border: none; width: 100%; text-align: left; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.faq-answer { padding: 0 16px 16px 16px; font-size: 0.85rem; color: #64748b; line-height: 1.5; display: none; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.faq-item.active .faq-answer { display: block; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Rodap&eacute; de Confian&ccedil;a */<br> &nbsp; &nbsp; &nbsp; &nbsp;.trust-list { background: #0f172a; color: white; padding: 30px 20px; display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.trust-item { display: flex; align-items: flex-start; gap: 14px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.trust-icon { color: #38bdf8; font-size: 1.3rem; margin-top: 2px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.trust-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.trust-desc { font-size: 0.8rem; color: #94a3b8; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Rodap&eacute; Comercial */<br> &nbsp; &nbsp; &nbsp; &nbsp;footer { background: #070d19; color: #94a3b8; padding: 30px 20px 90px 20px; font-size: 0.8rem; line-height: 1.6; border-top: 1px solid #1e293b; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.footer-brand { font-size: 1rem; font-weight: 800; color: white; margin-bottom: 6px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.footer-contact { margin: 12px 0; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.footer-contact a { color: #38bdf8; text-decoration: none; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.footer-copyright { border-top: 1px solid #1e293b; padding-top: 15px; margin-top: 15px; font-size: 0.75rem; color: #64748b; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* Bot&atilde;o Flutuante do WhatsApp */<br> &nbsp; &nbsp; &nbsp; &nbsp;.whatsapp-widget-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; border: none; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); cursor: pointer; z-index: 99; text-decoration: none; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;/* MODAL WEBCHAT DO ROB&Ocirc; EDU */<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 12px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-modal-content { background: #f8fafc; border-radius: 18px; width: 100%; max-width: 420px; height: 90vh; max-height: 600px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-modal-header { background: #1a3a5c; color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-header-user { display: flex; align-items: center; gap: 10px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-avatar { background: rgba(255,255,255,0.15); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-modal-body { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }<br> &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-bubble-bot { background: #edf2f7; color: #1a202c; padding: 12px 14px; border-radius: 14px; border-top-left-radius: 2px; max-width: 90%; font-size: 0.88rem; line-height: 1.4; align-self: flex-start; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-bubble-user { background: #1a3a5c; color: white; padding: 12px 14px; border-radius: 14px; border-top-right-radius: 2px; max-width: 90%; font-size: 0.88rem; line-height: 1.4; align-self: flex-end; }<br> &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-options-container { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; width: 100%; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-option-btn { background: white; border: 1px solid #cbd5e1; color: #1a3a5c; padding: 10px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; text-align: left; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-option-btn:hover { background: #f1f5f9; border-color: #1a3a5c; }<br><br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-modal-footer { padding: 10px 12px; background: white; border-top: 1px solid #e2e8f0; display: flex; gap: 8px; align-items: center; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-input-field { flex: 1; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 20px; outline: none; font-size: 0.88rem; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.chat-send-btn { background: #1a3a5c; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; flex-shrink: 0; }<br> &nbsp; &nbsp; &nbsp; &nbsp;.btn-link-action { background: #25d366; color: white; text-decoration: none; font-weight: bold; padding: 10px 14px; border-radius: 8px; display: block; text-align: center; margin-top: 8px; font-size: 0.85rem; }<br> &nbsp; &nbsp;&lt;/style&gt;<br>&lt;/head&gt;<br>&lt;body&gt;<br><br> &nbsp; &nbsp;&lt;!-- Header Navigation --&gt;<br> &nbsp; &nbsp;&lt;header&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;brand-container&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;brand-icon&quot;&gt;&lt;i class=&quot;fa-solid fa-graduation-cap&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;brand-title&quot;&gt;Portal Cursos EAD&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;brand-subtitle&quot;&gt;Educa&ccedil;&atilde;o que aproxima&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;button onclick=&quot;abrirModalEdu()&quot; class=&quot;header-btn-chat&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;fa-solid fa-robot&quot;&gt;&lt;/i&gt; Edu<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/button&gt;<br> &nbsp; &nbsp;&lt;/header&gt;<br><br> &nbsp; &nbsp;&lt;!-- Hero Section --&gt;<br> &nbsp; &nbsp;&lt;section class=&quot;hero&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;hero-badge&quot;&gt;CURSOS EAD &bull; SUPORTE PR&Oacute;XIMO&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;h1 class=&quot;hero-title&quot;&gt;Seu pr&oacute;ximo passo come&ccedil;a com uma boa orienta&ccedil;&atilde;o.&lt;/h1&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;hero-desc&quot;&gt;Cursos de tr&acirc;nsito, NRs, gradua&ccedil;&atilde;o, p&oacute;s-gradua&ccedil;&atilde;o, cursos livres e intelig&ecirc;ncia artificial com suporte r&aacute;pido do Edu.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;hero-features&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;hero-feature-item&quot;&gt;&lt;i class=&quot;fa-solid fa-circle-check&quot; style=&quot;color:#00d26a;&quot;&gt;&lt;/i&gt; Atendimento orientado&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;hero-feature-item&quot;&gt;&lt;i class=&quot;fa-solid fa-laptop&quot; style=&quot;color:#38bdf8;&quot;&gt;&lt;/i&gt; Estude onde estiver&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/section&gt;<br><br> &nbsp; &nbsp;&lt;!-- Se&ccedil;&atilde;o de Cursos --&gt;<br> &nbsp; &nbsp;&lt;main class=&quot;section-container&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;sub-header&quot;&gt;ESCOLHA SUA JORNADA&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2 class=&quot;section-title&quot;&gt;Forma&ccedil;&otilde;es para acelerar seus planos.&lt;/h2&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;section-desc&quot;&gt;Selecione uma modalidade e conte com o Edu para encontrar o melhor caminho para sua matr&iacute;cula, capacita&ccedil;&atilde;o ou parceria.&lt;/p&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cards-grid&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-left&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-icon-wrapper card-icon-blue&quot;&gt;&lt;i class=&quot;fa-solid fa-truck-fast&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3 class=&quot;card-item-title&quot;&gt;Tr&acirc;nsito, NRs &amp; Reciclagem&lt;/h3&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;card-item-text&quot;&gt;MOPP, Escolar, Coletivo, Emerg&ecirc;ncia, Carga Indivis&iacute;vel, Motofrete, NRs e Reciclagem de CNH.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;card-btn-action&quot; onclick=&quot;abrirEduComOpcao(&#39;ESP&#39;)&quot;&gt;&lt;i class=&quot;fa-solid fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-left&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-icon-wrapper card-icon-green&quot;&gt;&lt;i class=&quot;fa-solid fa-building-columns&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3 class=&quot;card-item-title&quot;&gt;Gradua&ccedil;&atilde;o &amp; P&oacute;s FASUL&lt;/h3&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;card-item-text&quot;&gt;Gradua&ccedil;&atilde;o, p&oacute;s-gradua&ccedil;&atilde;o e cursos t&eacute;cnicos para ampliar sua forma&ccedil;&atilde;o profissional.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;card-btn-action&quot; onclick=&quot;abrirEduComOpcao(&#39;FASUL&#39;)&quot;&gt;&lt;i class=&quot;fa-solid fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-left&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-icon-wrapper card-icon-purple&quot;&gt;&lt;i class=&quot;fa-solid fa-brain&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3 class=&quot;card-item-title&quot;&gt;Cursos de IA FASUL&lt;/h3&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;card-item-text&quot;&gt;Conhe&ccedil;a forma&ccedil;&otilde;es focadas em intelig&ecirc;ncia artificial, inova&ccedil;&atilde;o e novas tecnologias.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;card-btn-action&quot; onclick=&quot;abrirEduComOpcao(&#39;IA&#39;)&quot;&gt;&lt;i class=&quot;fa-solid fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-left&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;card-icon-wrapper card-icon-orange&quot;&gt;&lt;i class=&quot;fa-solid fa-lightbulb&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h3 class=&quot;card-item-title&quot;&gt;Cursos Livres FASUL&lt;/h3&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;card-item-text&quot;&gt;Cursos livres e capacita&ccedil;&otilde;es pr&aacute;ticas para desenvolver novas habilidades com flexibilidade.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;card-btn-action&quot; onclick=&quot;abrirEduComOpcao(&#39;LIVRES&#39;)&quot;&gt;&lt;i class=&quot;fa-solid fa-arrow-right&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- Se&ccedil;&atilde;o de Afiliados --&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div style=&quot;margin-top: 40px;&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;sub-header&quot;&gt;PARCEIROS &amp; AFILIADOS&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2 class=&quot;section-title&quot;&gt;Transforme indica&ccedil;&otilde;es em novas oportunidades.&lt;/h2&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;section-desc&quot;&gt;Trabalhe com a revenda dos cursos Especializados Brasil. O Edu registra seu interesse e encaminha sua solicita&ccedil;&atilde;o diretamente para nossa equipe no WhatsApp.&lt;/p&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-box&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-title&quot;&gt;TABELA COMERCIAL DE REVENDA&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-grid&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-card-small&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-label&quot;&gt;Compra do parceiro&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-value&quot;&gt;R$ 250,00&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-card-green&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-label&quot;&gt;Venda sugerida&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-value&quot;&gt;R$ 350,00&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;affiliate-margin-card&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-label&quot;&gt;Diferen&ccedil;a por venda&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;aff-value&quot; style=&quot;color: #4ade80;&quot;&gt;R$ 100,00 de margem sugerida&lt;/span&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- Se&ccedil;&atilde;o FAQ Sanfona --&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-container&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;sub-header&quot;&gt;D&Uacute;VIDAS FREQUENTES&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h2 class=&quot;section-title&quot;&gt;Tudo o que voc&ecirc; precisa saber.&lt;/h2&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p class=&quot;section-desc&quot;&gt;Respostas diretas para as principais d&uacute;vidas dos nossos alunos e parceiros.&lt;/p&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;faq-question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;Os cursos de tr&acirc;nsito s&atilde;o reconhecidos pelo SENATRAN? &lt;span&gt;+&lt;/span&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-answer&quot;&gt;Sim! Todos os cursos de especializa&ccedil;&atilde;o (MOPP, Coletivo, Escolar, etc.) s&atilde;o 100% homologados e possuem validade em todo o territ&oacute;rio nacional.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;faq-question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;Como funciona a certifica&ccedil;&atilde;o da FASUL Educacional? &lt;span&gt;+&lt;/span&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-answer&quot;&gt;A FASUL oferece cursos de Gradua&ccedil;&atilde;o, P&oacute;s-Gradua&ccedil;&atilde;o e Capacita&ccedil;&atilde;o em parceria acad&ecirc;mica s&oacute;lida, garantindo suporte completo, alta qualidade de ensino e certificados v&aacute;lidos para progress&atilde;o de carreira.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;faq-question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;Como posso me tornar um afiliado e revender os cursos? &lt;span&gt;+&lt;/span&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-answer&quot;&gt;Basta clicar na op&ccedil;&atilde;o de Afiliados no menu do site ou chamar o Edu no WhatsApp. Voc&ecirc; adquire por R$ 250,00 e revende por R$ 350,00, garantindo R$ 100,00 de lucro por aluno.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;faq-question&quot; onclick=&quot;toggleFaq(this)&quot;&gt;Como recebo meu certificado ou comprova&ccedil;&atilde;o? &lt;span&gt;+&lt;/span&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;faq-answer&quot;&gt;Ap&oacute;s a conclus&atilde;o das etapas do curso e confirma&ccedil;&atilde;o da documenta&ccedil;&atilde;o (como o envio da CNH para os cursos especializados), a emiss&atilde;o &eacute; processada e disponibilizada com total agilidade.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/main&gt;<br><br> &nbsp; &nbsp;&lt;!-- Rodap&eacute; de Diferenciais --&gt;<br> &nbsp; &nbsp;&lt;section class=&quot;trust-list&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-icon&quot;&gt;&lt;i class=&quot;fa-regular fa-clock&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-title&quot;&gt;Orienta&ccedil;&atilde;o r&aacute;pida&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-desc&quot;&gt;Edu guia cada etapa do atendimento.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-icon&quot;&gt;&lt;i class=&quot;fa-regular fa-circle-check&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-title&quot;&gt;Jornada clara&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-desc&quot;&gt;Cursos e encaminhamentos organizados.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-item&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-icon&quot;&gt;&lt;i class=&quot;fa-solid fa-mobile-screen&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-title&quot;&gt;Atendimento no celular&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;trust-desc&quot;&gt;Suporte via WhatsApp quando necess&aacute;rio.&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/section&gt;<br><br> &nbsp; &nbsp;&lt;!-- Rodap&eacute; Comercial --&gt;<br> &nbsp; &nbsp;&lt;footer&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;footer-brand&quot;&gt;Portal Cursos EAD&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;Aprendizado, orienta&ccedil;&atilde;o e novas oportunidades em todo o Brasil.&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;footer-contact&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;strong&gt;Atendimento Comercial:&lt;/strong&gt;&lt;br&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#9993;&#65039; E-mail: &lt;a href=&quot;mailto:contato.portalcursosead@yandex.com&quot;&gt;contato.portalcursosead@yandex.com&lt;/a&gt;&lt;br&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&#128242; WhatsApp Suporte: &lt;a href=&quot;https://wa.me/5551980244441&quot; target=&quot;_blank&quot;&gt;(51) 98024-4441&lt;/a&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;footer-copyright&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&copy; 2026 Portal Cursos EAD. Todos os direitos reservados.&lt;br&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Plataforma credenciada de media&ccedil;&atilde;o educacional, cursos de tr&acirc;nsito homologados e parceria acad&ecirc;mica.<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/footer&gt;<br><br> &nbsp; &nbsp;&lt;!-- Bot&atilde;o Flutuante do WhatsApp --&gt;<br> &nbsp; &nbsp;&lt;a href=&quot;https://wa.me/5551980244441?text=Ol%C3%A1%2C%20Edu!%20Vim%20pelo%20site.&quot; target=&quot;_blank&quot; class=&quot;whatsapp-widget-btn&quot; title=&quot;Falar no WhatsApp&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;fa-brands fa-whatsapp&quot;&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;/a&gt;<br><br> &nbsp; &nbsp;&lt;!-- MODAL WEBCHAT DO ROB&Ocirc; EDU --&gt;<br> &nbsp; &nbsp;&lt;div class=&quot;chat-modal&quot; id=&quot;modalEdu&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-modal-content&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-modal-header&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-header-user&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-avatar&quot;&gt;&lt;i class=&quot;fa-solid fa-robot&quot;&gt;&lt;/i&gt;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;strong style=&quot;font-size:0.95rem&quot;&gt;Edu &bull; Assistente virtual&lt;/strong&gt;&lt;br&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;small style=&quot;color:#4ade80; font-size:0.75rem&quot;&gt;&#9679; Online agora&lt;/small&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button onclick=&quot;fecharModalEdu()&quot; style=&quot;background:none; border:none; color:white; font-size:1.3rem; cursor:pointer&quot;&gt;&#10005;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-modal-body&quot; id=&quot;chatMessages&quot;&gt;&lt;/div&gt;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;chat-modal-footer&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;input type=&quot;text&quot; id=&quot;chatInput&quot; class=&quot;chat-input-field&quot; placeholder=&quot;Digite sua resposta...&quot; onkeypress=&quot;handleKeyPress(event)&quot;&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;chat-send-btn&quot; onclick=&quot;enviarMensagemTexto()&quot;&gt;&lt;i class=&quot;fa-solid fa-paper-plane&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/div&gt;<br><br> &nbsp; &nbsp;&lt;script&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;const WHATSAPP_SUPORTE = &quot;5551980244441&quot;;<br><br> &nbsp; &nbsp; &nbsp; &nbsp;const PLANILHA_FASUL = {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;administracao&quot;: { nome: &quot;Gradua&ccedil;&atilde;o em Administra&ccedil;&atilde;o&quot;, link: &quot;https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;pedagogia&quot;: { nome: &quot;Gradua&ccedil;&atilde;o em Pedagogia&quot;, link: &quot;https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;pos transito&quot;: { nome: &quot;P&oacute;s em Gest&atilde;o de Tr&acirc;nsito&quot;, link: &quot;https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;ia&quot;: { nome: &quot;Curso de IA &amp; Novas Tecnologias&quot;, link: &quot;https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp;};<br><br> &nbsp; &nbsp; &nbsp; &nbsp;const PLANILHA_ESPECIALIZADOS = {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;mopp&quot;: { nome: &quot;MOPP / Produtos Perigosos&quot;, preco: 350.00 },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;escolar&quot;: { nome: &quot;Transporte Escolar&quot;, preco: 350.00 },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;coletivo&quot;: { nome: &quot;Transporte Coletivo&quot;, preco: 350.00 },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;nr35&quot;: { nome: &quot;NR 35 - Trabalho em Altura&quot;, preco: 220.00 },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&quot;reciclagem&quot;: { nome: &quot;Reciclagem de CNH&quot;, preco: 150.00 }<br> &nbsp; &nbsp; &nbsp; &nbsp;};<br><br> &nbsp; &nbsp; &nbsp; &nbsp;let estadoChat = &quot;INICIO&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp;let cursoSelecionado = null;<br> &nbsp; &nbsp; &nbsp; &nbsp;let dadosForm = {};<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function toggleFaq(btn) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const item = btn.parentElement;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;item.classList.toggle(&#39;active&#39;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const span = btn.querySelector(&#39;span&#39;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;span.textContent = item.classList.contains(&#39;active&#39;) ? &#39;-&#39; : &#39;+&#39;;<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function abrirModalEdu() {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;document.getElementById(&quot;modalEdu&quot;).style.display = &quot;flex&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (document.getElementById(&quot;chatMessages&quot;).children.length === 0) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;renderMenuInicial();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function fecharModalEdu() {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;document.getElementById(&quot;modalEdu&quot;).style.display = &quot;none&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function abrirEduComOpcao(tipo) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;abrirModalEdu();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tratarOpcao(tipo);<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function appendBotMsg(txt, options = null) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const body = document.getElementById(&quot;chatMessages&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const div = document.createElement(&quot;div&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;div.className = &quot;chat-bubble-bot&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;div.innerHTML = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (options) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const optContainer = document.createElement(&quot;div&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;optContainer.className = &quot;chat-options-container&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;options.forEach(opt =&gt; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const btn = document.createElement(&quot;button&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;btn.className = &quot;chat-option-btn&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;btn.innerHTML = `${opt.label} &lt;i class=&quot;fa-solid fa-chevron-right&quot; style=&quot;font-size:0.75rem; color:#94a3b8&quot;&gt;&lt;/i&gt;`;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;btn.onclick = () =&gt; tratarOpcao(opt.val);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;optContainer.appendChild(btn);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;});<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;div.appendChild(optContainer);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;body.appendChild(div);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;body.scrollTop = body.scrollHeight;<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function appendUserMsg(txt) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const body = document.getElementById(&quot;chatMessages&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const div = document.createElement(&quot;div&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;div.className = &quot;chat-bubble-user&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;div.innerText = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;body.appendChild(div);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;body.scrollTop = body.scrollHeight;<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function renderMenuInicial() {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;MENU_INICIAL&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Ol&aacute;! Eu sou o Edu, assistente virtual do Portal Cursos EAD.&lt;br&gt;Como posso ajudar voc&ecirc; hoje?&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Escolha uma op&ccedil;&atilde;o pelo n&uacute;mero ou clique em um dos bot&otilde;es abaixo:&quot;, [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;&#128663; Cursos Especializados, NRs &amp; Reciclagem&quot;, val: &quot;ESP&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;&#127891; FASUL Educacional (Gradua&ccedil;&atilde;o/P&oacute;s)&quot;, val: &quot;FASUL&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;&#128188; Seja um Afiliado / Trabalhe Conosco&quot;, val: &quot;AFILIADO&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;&#128172; Falar no WhatsApp&quot;, val: &quot;WHATSAPP_DIRETO&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]);<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function tratarOpcao(val) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (val === &quot;ESP&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;&#128663; Cursos Especializados, NRs &amp; Reciclagem&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;INTENCAO_ESP&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Os **Cursos Especializados Brasil** s&atilde;o 100% homologados pelo SENATRAN, v&aacute;lidos em todo o Brasil. Qual &eacute; o seu objetivo principal?&quot;, [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;A &mdash; Adquirir o curso para meu uso / habilita&ccedil;&atilde;o&quot;, val: &quot;COMPRAR_ESP&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;B &mdash; Revender os cursos / Trabalhar como Afiliado&quot;, val: &quot;AFILIADO&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (val === &quot;COMPRAR_ESP&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;A &mdash; Adquirir o curso para meu uso&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;LISTA_ESP&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Perfeito! Confira os valores e selecione o curso desejado:&quot;, [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;MOPP &mdash; R$ 350,00&quot;, val: &quot;mopp&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;Transporte Escolar &mdash; R$ 350,00&quot;, val: &quot;escolar&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;Transporte Coletivo &mdash; R$ 350,00&quot;, val: &quot;coletivo&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;NR 35 &mdash; R$ 220,00&quot;, val: &quot;nr35&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (val === &quot;FASUL&quot; || val === &quot;IA&quot; || val === &quot;LIVRES&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;&#127891; FASUL Educacional&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;MODALIDADE_FASUL&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;A **FASUL Educacional** oferece cursos superiores, p&oacute;s-gradua&ccedil;&atilde;o e capacita&ccedil;&otilde;es com certifica&ccedil;&atilde;o de excel&ecirc;ncia para impulsionar sua carreira. Escolha a modalidade:&quot;, [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;1. Gradua&ccedil;&atilde;o&quot;, val: &quot;F_GRAD&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;2. P&oacute;s-Gradua&ccedil;&atilde;o&quot;, val: &quot;F_POS&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;3. Cursos Livres &amp; Capacita&ccedil;&atilde;o&quot;, val: &quot;F_LIVRES&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;4. Cursos de Intelig&ecirc;ncia Artificial (IA)&quot;, val: &quot;F_IA&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (val.startsWith(&quot;F_&quot;)) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;PERGUNTAR_NOME_CURSO_FASUL&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Qual &eacute; o **nome do curso** que voc&ecirc; procura na FASUL? (Digite abaixo para eu buscar o link oficial de cadastro na planilha)&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (val === &quot;AFILIADO&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;&#128188; Seja um Afiliado / Trabalhe Conosco&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_AFILIADO_NOME&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Tabela Comercial de Revenda:&lt;br&gt;&bull; Forma&ccedil;&atilde;o para parceiro: R$ 250,00&lt;br&gt;&bull; Venda sugerida: R$ 350,00&lt;br&gt;&bull; Margem sugerida: R$ 100,00 por aluno.&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Para encaminhar sua solicita&ccedil;&atilde;o de afilia&ccedil;&atilde;o, informe seu **nome completo**.&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (val === &quot;WHATSAPP_DIRETO&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;encaminharWhatsappDireto(&quot;Ol&aacute;! Gostaria de falar com o suporte humano.&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (PLANILHA_ESPECIALIZADOS[val]) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursoSelecionado = PLANILHA_ESPECIALIZADOS[val];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_ESP_NOME&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`Inscri&ccedil;&atilde;o para **${cursoSelecionado.nome}** (R$ ${cursoSelecionado.preco.toFixed(2)}).&lt;br&gt;&lt;br&gt;Por favor, digite seu **Nome Completo**:`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function enviarMensagemTexto() {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const input = document.getElementById(&quot;chatInput&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;const txt = input.value.trim();<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!txt) return;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(txt);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;input.value = &quot;&quot;;<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (estadoChat === &quot;PERGUNTAR_NOME_CURSO_FASUL&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let cursoAchado = null;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for (let k in PLANILHA_FASUL) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (txt.toLowerCase().includes(k)) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursoAchado = PLANILHA_FASUL[k];<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;break;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (!cursoAchado) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursoAchado = { nome: txt, link: &quot;https://docs.google.com/spreadsheets/d/1y6JHACipvAPre6vJiR7aDiVfzYTDvUc2XbzBsYfF6Aw/edit?usp=drivesdk&quot; };<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cursoSelecionado = cursoAchado;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`Link Oficial de Cadastro da FASUL localizado:&lt;br&gt;&#128073; &lt;strong&gt;${cursoAchado.nome}&lt;/strong&gt;&lt;a href=&quot;${cursoAchado.link}&quot; target=&quot;_blank&quot; class=&quot;btn-link-action&quot;&gt;&#128279; Abrir Link de Cadastro FASUL&lt;/a&gt;`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;setTimeout(() =&gt; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;CHECAR_ACESSO_FASUL&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`Voc&ecirc; conseguiu acessar o link de cadastro do curso &lt;strong&gt;${cursoAchado.nome}&lt;/strong&gt;?`, [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;SIM, consegui acessar&quot;, val: &quot;FASUL_SIM&quot; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{ label: &quot;N&Atilde;O, preciso de ajuda&quot;, val: &quot;FASUL_NAO&quot; }<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;]);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}, 4000);<br><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_ESP_NOME&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.nome = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_ESP_CPF&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Obrigado! Agora digite o seu **CPF**:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_ESP_CPF&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.cpf = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_ESP_NASC&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Digite o seu **Ano de Nascimento**:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_ESP_NASC&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.nasc = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let msgWp = `*NOVA INSCRICAO - ${cursoSelecionado.nome}*%0ANome: ${dadosForm.nome}%0ACPF: ${dadosForm.cpf}%0ANascimento: ${dadosForm.nasc}%0ACNH: Anexa no WhatsApp`;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Perfeito! Clique no bot&atilde;o abaixo para enviar sua ficha e a foto da sua CNH diretamente no WhatsApp:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`&lt;a href=&quot;https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}&quot; target=&quot;_blank&quot; class=&quot;btn-link-action&quot;&gt;&#128248; Enviar CNH no WhatsApp&lt;/a&gt;`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_AFILIADO_NOME&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let msgWp = `*SOLICITACAO DE AFILIACAO*%0ANome: ${txt}`;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`Obrigado, ${txt}! Clique no bot&atilde;o abaixo para enviar sua solicita&ccedil;&atilde;o de afilia&ccedil;&atilde;o diretamente para nossa equipe:`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`&lt;a href=&quot;https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}&quot; target=&quot;_blank&quot; class=&quot;btn-link-action&quot;&gt;&#128188; Concluir no WhatsApp&lt;/a&gt;`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_FASUL_NOME&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.nome = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_FASUL_CPF&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Digite o seu **CPF**:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_FASUL_CPF&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.cpf = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_FASUL_NASC&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Digite o seu **Ano de Nascimento**:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (estadoChat === &quot;FORM_FASUL_NASC&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;dadosForm.nasc = txt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let msgWp = `*RESGATE CADASTRO FASUL*%0ACurso: ${cursoSelecionado ? cursoSelecionado.nome : &#39;FASUL&#39;}%0ANome: ${dadosForm.nome}%0ACPF: ${dadosForm.cpf}%0ANascimento: ${dadosForm.nasc}`;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Coletamos seus dados! Clique abaixo para finalizar seu atendimento com o suporte humano:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(`&lt;a href=&quot;https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}&quot; target=&quot;_blank&quot; class=&quot;btn-link-action&quot;&gt;&#128172; Falar com Suporte FASUL&lt;/a&gt;`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;encaminharWhatsappDireto(txt);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function tratarOpcaoAcesso(resposta) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (resposta === &quot;FASUL_SIM&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;SIM, consegui acessar&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;&#127881; Excelente! O Portal Cursos EAD e o Edu agradecem seu contato. Bons estudos! &#128640;&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else if (resposta === &quot;FASUL_NAO&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendUserMsg(&quot;N&Atilde;O, preciso de ajuda&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;estadoChat = &quot;FORM_FASUL_NOME&quot;;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;appendBotMsg(&quot;Entendido! Vamos te ajudar pessoalmente.&lt;br&gt;Por favor, digite o seu **Nome Completo**:&quot;);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;const _tratarOpcaoOriginal = tratarOpcao;<br> &nbsp; &nbsp; &nbsp; &nbsp;tratarOpcao = function(val) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (val === &quot;FASUL_SIM&quot; || val === &quot;FASUL_NAO&quot;) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tratarOpcaoAcesso(val);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;} else {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_tratarOpcaoOriginal(val);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;};<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function encaminharWhatsappDireto(txt) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;let msg = encodeURIComponent(`Ol&aacute;, Edu! Preciso de ajuda com: ${txt}`);<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;window.open(`https://wa.me/${WHATSAPP_SUPORTE}?text=${msg}`, &#39;_blank&#39;);<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br><br> &nbsp; &nbsp; &nbsp; &nbsp;function handleKeyPress(e) {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if (e.key === &#39;Enter&#39;) enviarMensagemTexto();<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp;&lt;/script&gt;<br>&lt;/body&gt;<br>&lt;/html&gt;<br></span></p></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Cursos EAD | Educação que aproxima</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #f4f7f6; color: #1e293b; display: flex; flex-direction: column; min-height: 100vh; }
+        
+        /* Header Principal */
+        header { background: #ffffff; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; position: sticky; top: 0; z-index: 90; }
+        .brand-container { display: flex; align-items: center; gap: 12px; }
+        .brand-icon { background: #1f4e79; color: white; width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .brand-title { font-size: 1.05rem; font-weight: 800; color: #1f4e79; line-height: 1.1; }
+        .brand-subtitle { font-size: 0.75rem; color: #64748b; font-weight: 500; }
+        .header-btn-chat { background: #25d366; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-weight: bold; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 6px; text-decoration: none; }
+
+        /* Banner Hero */
+        .hero { background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; color: white; padding: 45px 20px; text-align: left; }
+        .hero-badge { background: #00d26a; color: #022c16; font-size: 0.7rem; font-weight: 800; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-block; margin-bottom: 14px; }
+        .hero-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; line-height: 1.25; }
+        .hero-desc { font-size: 0.95rem; color: #e2e8f0; line-height: 1.5; margin-bottom: 24px; max-width: 600px; }
+        .hero-features { display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.85rem; color: #f8fafc; }
+        .hero-feature-item { display: flex; align-items: center; gap: 6px; }
+
+        /* Container de Conteúdo */
+        .section-container { max-width: 900px; margin: 30px auto; padding: 0 16px; width: 100%; }
+        .sub-header { font-size: 0.75rem; font-weight: 800; color: #1f4e79; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .section-title { font-size: 1.4rem; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+        .section-desc { font-size: 0.9rem; color: #64748b; margin-bottom: 24px; line-height: 1.4; }
+
+        /* Cards de Modalidades */
+        .cards-grid { display: flex; flex-direction: column; gap: 16px; }
+        .card-item { background: white; border-radius: 16px; padding: 20px; border: 1px solid #e2e8f0; box-shadow: 0 2px 8px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; }
+        .card-left { flex: 1; padding-right: 15px; }
+        .card-icon-wrapper { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 12px; }
+        .card-icon-blue { background: #e0f2fe; color: #0284c7; }
+        .card-icon-green { background: #dcfce7; color: #16a34a; }
+        .card-icon-purple { background: #f3e8ff; color: #9333ea; }
+        .card-icon-orange { background: #ffedd5; color: #ea580c; }
+        .card-item-title { font-size: 1.1rem; font-weight: 800; color: #0f172a; margin-bottom: 6px; }
+        .card-item-text { font-size: 0.85rem; color: #64748b; line-height: 1.4; }
+        .card-btn-action { background: #1f4e79; color: white; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; border: none; cursor: pointer; font-size: 1rem; flex-shrink: 0; }
+
+        /* Card de Afiliados */
+        .affiliate-box { background: #1a3a5c; border-radius: 16px; padding: 24px; color: white; margin-top: 15px; }
+        .affiliate-title { font-size: 0.8rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .affiliate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+        .affiliate-card-small { background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; }
+        .affiliate-card-green { background: #00d26a; color: #022c16; padding: 14px; border-radius: 10px; }
+        .aff-label { font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 4px; }
+        .aff-value { font-size: 1.25rem; font-weight: 800; }
+        .affiliate-margin-card { background: rgba(255, 255, 255, 0.08); padding: 14px; border-radius: 10px; }
+
+        /* Seção FAQ Sanfona */
+        .faq-container { margin-top: 40px; }
+        .faq-item { background: white; border: 1px solid #e2e8f0; border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+        .faq-question { padding: 16px; font-weight: 700; font-size: 0.95rem; color: #0f172a; display: flex; justify-content: space-between; align-items: center; cursor: pointer; background: white; border: none; width: 100%; text-align: left; }
+        .faq-answer { padding: 0 16px 16px 16px; font-size: 0.85rem; color: #64748b; line-height: 1.5; display: none; }
+        .faq-item.active .faq-answer { display: block; }
+
+        /* Rodapé de Confiança */
+        .trust-list { background: #0f172a; color: white; padding: 30px 20px; display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
+        .trust-item { display: flex; align-items: flex-start; gap: 14px; }
+        .trust-icon { color: #38bdf8; font-size: 1.3rem; margin-top: 2px; }
+        .trust-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+        .trust-desc { font-size: 0.8rem; color: #94a3b8; }
+
+        /* Rodapé Comercial */
+        footer { background: #070d19; color: #94a3b8; padding: 30px 20px 90px 20px; font-size: 0.8rem; line-height: 1.6; border-top: 1px solid #1e293b; }
+        .footer-brand { font-size: 1rem; font-weight: 800; color: white; margin-bottom: 6px; }
+        .footer-contact { margin: 12px 0; }
+        .footer-contact a { color: #38bdf8; text-decoration: none; }
+        .footer-copyright { border-top: 1px solid #1e293b; padding-top: 15px; margin-top: 15px; font-size: 0.75rem; color: #64748b; }
+
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-widget-btn { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; border: none; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5); cursor: pointer; z-index: 99; text-decoration: none; }
+
+        /* MODAL WEBCHAT DO ROBÔ EDU */
+        .chat-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; display: none; align-items: center; justify-content: center; padding: 12px; }
+        .chat-modal-content { background: #f8fafc; border-radius: 18px; width: 100%; max-width: 420px; height: 90vh; max-height: 600px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3); }
+        .chat-modal-header { background: #1a3a5c; color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; }
+        .chat-header-user { display: flex; align-items: center; gap: 10px; }
+        .chat-avatar { background: rgba(255,255,255,0.15); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+        .chat-modal-body { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+        
+        .chat-bubble-bot { background: #edf2f7; color: #1a202c; padding: 12px 14px; border-radius: 14px; border-top-left-radius: 2px; max-width: 90%; font-size: 0.88rem; line-height: 1.4; align-self: flex-start; }
+        .chat-bubble-user { background: #1a3a5c; color: white; padding: 12px 14px; border-radius: 14px; border-top-right-radius: 2px; max-width: 90%; font-size: 0.88rem; line-height: 1.4; align-self: flex-end; }
+        
+        .chat-options-container { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; width: 100%; }
+        .chat-option-btn { background: white; border: 1px solid #cbd5e1; color: #1a3a5c; padding: 10px 14px; border-radius: 10px; font-size: 0.85rem; font-weight: 600; text-align: left; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: space-between; }
+        .chat-option-btn:hover { background: #f1f5f9; border-color: #1a3a5c; }
+
+        .chat-modal-footer { padding: 10px 12px; background: white; border-top: 1px solid #e2e8f0; display: flex; gap: 8px; align-items: center; }
+        .chat-input-field { flex: 1; border: 1px solid #cbd5e1; padding: 10px 14px; border-radius: 20px; outline: none; font-size: 0.88rem; }
+        .chat-send-btn { background: #1a3a5c; color: white; border: none; width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 0.9rem; flex-shrink: 0; }
+        .btn-link-action { background: #25d366; color: white; text-decoration: none; font-weight: bold; padding: 10px 14px; border-radius: 8px; display: block; text-align: center; margin-top: 8px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand-container">
+            <div class="brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+                <div class="brand-title">Portal Cursos EAD</div>
+                <div class="brand-subtitle">Educação que aproxima</div>
+            </div>
+        </div>
+        <button onclick="abrirModalEdu()" class="header-btn-chat">
+            <i class="fa-solid fa-robot"></i> Edu
+        </button>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">CURSOS EAD • SUPORTE PRÓXIMO</span>
+        <h1 class="hero-title">Seu próximo passo começa com uma boa orientação.</h1>
+        <p class="hero-desc">Cursos de trânsito, NRs, graduação, pós-graduação, cursos livres e inteligência artificial com suporte rápido do Edu.</p>
+        
+        <div class="hero-features">
+            <div class="hero-feature-item"><i class="fa-solid fa-circle-check" style="color:#00d26a;"></i> Atendimento orientado</div>
+            <div class="hero-feature-item"><i class="fa-solid fa-laptop" style="color:#38bdf8;"></i> Estude onde estiver</div>
+        </div>
+    </section>
+
+    <!-- Seção de Cursos -->
+    <main class="section-container">
+        <div class="sub-header">ESCOLHA SUA JORNADA</div>
+        <h2 class="section-title">Formações para acelerar seus planos.</h2>
+        <p class="section-desc">Selecione uma modalidade e conte com o Edu para encontrar o melhor caminho para sua matrícula, capacitação ou parceria.</p>
+
+        <div class="cards-grid">
+            <div class="card-item">
+                <div class="card-left">
+                    <div class="card-icon-wrapper card-icon-blue"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3 class="card-item-title">Trânsito, NRs & Reciclagem</h3>
+                    <p class="card-item-text">MOPP, Escolar, Coletivo, Emergência, Carga Indivisível, Motofrete, NRs e Reciclagem de CNH.</p>
+                </div>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('ESP')"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="card-item">
+                <div class="card-left">
+                    <div class="card-icon-wrapper card-icon-green"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3 class="card-item-title">Graduação & Pós FASUL</h3>
+                    <p class="card-item-text">Graduação, pós-graduação e cursos técnicos para ampliar sua formação profissional.</p>
+                </div>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('FASUL')"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="card-item">
+                <div class="card-left">
+                    <div class="card-icon-wrapper card-icon-purple"><i class="fa-solid fa-brain"></i></div>
+                    <h3 class="card-item-title">Cursos de IA FASUL</h3>
+                    <p class="card-item-text">Conheça formações focadas em inteligência artificial, inovação e novas tecnologias.</p>
+                </div>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('IA')"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="card-item">
+                <div class="card-left">
+                    <div class="card-icon-wrapper card-icon-orange"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3 class="card-item-title">Cursos Livres FASUL</h3>
+                    <p class="card-item-text">Cursos livres e capacitações práticas para desenvolver novas habilidades com flexibilidade.</p>
+                </div>
+                <button class="card-btn-action" onclick="abrirEduComOpcao('LIVRES')"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Seção de Afiliados -->
+        <div style="margin-top: 40px;">
+            <div class="sub-header">PARCEIROS & AFILIADOS</div>
+            <h2 class="section-title">Transforme indicações em novas oportunidades.</h2>
+            <p class="section-desc">Trabalhe com a revenda dos cursos Especializados Brasil. O Edu registra seu interesse e encaminha sua solicitação diretamente para nossa equipe no WhatsApp.</p>
+
+            <div class="affiliate-box">
+                <div class="affiliate-title">TABELA COMERCIAL DE REVENDA</div>
+                <div class="affiliate-grid">
+                    <div class="affiliate-card-small">
+                        <span class="aff-label">Compra do parceiro</span>
+                        <span class="aff-value">R$ 250,00</span>
+                    </div>
+                    <div class="affiliate-card-green">
+                        <span class="aff-label">Venda sugerida</span>
+                        <span class="aff-value">R$ 350,00</span>
+                    </div>
+                </div>
+                <div class="affiliate-margin-card">
+                    <span class="aff-label">Diferença por venda</span>
+                    <span class="aff-value" style="color: #4ade80;">R$ 100,00 de margem sugerida</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção FAQ Sanfona -->
+        <div class="faq-container">
+            <div class="sub-header">DÚVIDAS FREQUENTES</div>
+            <h2 class="section-title">Tudo o que você precisa saber.</h2>
+            <p class="section-desc">Respostas diretas para as principais dúvidas dos nossos alunos e parceiros.</p>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Os cursos de trânsito são reconhecidos pelo SENATRAN? <span>+</span></button>
+                <div class="faq-answer">Sim! Todos os cursos de especialização (MOPP, Coletivo, Escolar, etc.) são 100% homologados e possuem validade em todo o território nacional.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Como funciona a certificação da FASUL Educacional? <span>+</span></button>
+                <div class="faq-answer">A FASUL oferece cursos de Graduação, Pós-Graduação e Capacitação em parceria acadêmica sólida, garantindo suporte completo, alta qualidade de ensino e certificados válidos para progressão de carreira.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Como posso me tornar um afiliado e revender os cursos? <span>+</span></button>
+                <div class="faq-answer">Basta clicar na opção de Afiliados no menu do site ou chamar o Edu no WhatsApp. Você adquire por R$ 250,00 e revende por R$ 350,00, garantindo R$ 100,00 de lucro por aluno.</div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">Como recebo meu certificado ou comprovação? <span>+</span></button>
+                <div class="faq-answer">Após a conclusão das etapas do curso e confirmação da documentação (como o envio da CNH para os cursos especializados), a emissão é processada e disponibilizada com total agilidade.</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé de Diferenciais -->
+    <section class="trust-list">
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fa-regular fa-clock"></i></div>
+            <div>
+                <div class="trust-title">Orientação rápida</div>
+                <div class="trust-desc">Edu guia cada etapa do atendimento.</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fa-regular fa-circle-check"></i></div>
+            <div>
+                <div class="trust-title">Jornada clara</div>
+                <div class="trust-desc">Cursos e encaminhamentos organizados.</div>
+            </div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <div>
+                <div class="trust-title">Atendimento no celular</div>
+                <div class="trust-desc">Suporte via WhatsApp quando necessário.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé Comercial -->
+    <footer>
+        <div class="footer-brand">Portal Cursos EAD</div>
+        <p>Aprendizado, orientação e novas oportunidades em todo o Brasil.</p>
+        
+        <div class="footer-contact">
+            <strong>Atendimento Comercial:</strong><br>
+            ✉️ E-mail: <a href="mailto:contato.portalcursosead@yandex.com">contato.portalcursosead@yandex.com</a><br>
+            📲 WhatsApp Suporte: <a href="https://wa.me/5551980244441" target="_blank">(51) 98024-4441</a>
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 Portal Cursos EAD. Todos os direitos reservados.<br>
+            Plataforma credenciada de mediação educacional, cursos de trânsito homologados e parceria acadêmica.
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5551980244441?text=Ol%C3%A1%2C%20Edu!%20Vim%20pelo%20site." target="_blank" class="whatsapp-widget-btn" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- MODAL WEBCHAT DO ROBÔ EDU -->
+                <div class="chat-modal-body" id="chatMessages"></div>
+
+            <div class="chat-modal-footer">
+                <input type="text" id="chatInput" class="chat-input-field" placeholder="Digite sua resposta..." onkeypress="handleKeyPress(event)">
+                <button class="chat-send-btn" onclick="enviarMensagemTexto()"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const WHATSAPP_SUPORTE = "5551980244441";
+
+        const PLANILHA_FASUL = {
+            "administracao": { nome: "Graduação em Administração", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "pedagogia": { nome: "Graduação em Pedagogia", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "pos transito": { nome: "Pós em Gestão de Trânsito", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" },
+            "ia": { nome: "Curso de IA & Novas Tecnologias", link: "https://docs.google.com/spreadsheets/d/1RiCHlua0_ScVKcvSy_wyTkqLw-2ec8_b/edit?usp=drivesdk" }
+        };
+
+        const PLANILHA_ESPECIALIZADOS = {
+            "mopp": { nome: "MOPP / Produtos Perigosos", preco: 350.00 },
+            "escolar": { nome: "Transporte Escolar", preco: 350.00 },
+            "coletivo": { nome: "Transporte Coletivo", preco: 350.00 },
+            "nr35": { nome: "NR 35 - Trabalho em Altura", preco: 220.00 },
+            "reciclagem": { nome: "Reciclagem de CNH", preco: 150.00 }
+        };
+
+        let estadoChat = "INICIO";
+        let cursoSelecionado = null;
+        let dadosForm = {};
+
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            item.classList.toggle('active');
+            const span = btn.querySelector('span');
+            span.textContent = item.classList.contains('active') ? '-' : '+';
+        }
+
+        function abrirModalEdu() {
+            document.getElementById("modalEdu").style.display = "flex";
+            if (document.getElementById("chatMessages").children.length === 0) {
+                renderMenuInicial();
+            }
+        }
+
+        function fecharModalEdu() {
+            document.getElementById("modalEdu").style.display = "none";
+        }
+
+        function abrirEduComOpcao(tipo) {
+            abrirModalEdu();
+            tratarOpcao(tipo);
+        }
+
+        function appendBotMsg(txt, options = null) {
+            const body = document.getElementById("chatMessages");
+            const div = document.createElement("div");
+            div.className = "chat-bubble-bot";
+            div.innerHTML = txt;
+            
+            if (options) {
+                const optContainer = document.createElement("div");
+                optContainer.className = "chat-options-container";
+                options.forEach(opt => {
+                    const btn = document.createElement("button");
+                    btn.className = "chat-option-btn";
+                    btn.innerHTML = `${opt.label} <i class="fa-solid fa-chevron-right" style="font-size:0.75rem; color:#94a3b8"></i>`;
+                    btn.onclick = () => tratarOpcao(opt.val);
+                    optContainer.appendChild(btn);
+                });
+                div.appendChild(optContainer);
+            }
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function appendUserMsg(txt) {
+            const body = document.getElementById("chatMessages");
+            const div = document.createElement("div");
+            div.className = "chat-bubble-user";
+            div.innerText = txt;
+            body.appendChild(div);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function renderMenuInicial() {
+            estadoChat = "MENU_INICIAL";
+            appendBotMsg("Olá! Eu sou o Edu, assistente virtual do Portal Cursos EAD.<br>Como posso ajudar você hoje?");
+            appendBotMsg("Escolha uma opção pelo número ou clique em um dos botões abaixo:", [
+                { label: "🚗 Cursos Especializados, NRs & Reciclagem", val: "ESP" },
+                { label: "🎓 FASUL Educacional (Graduação/Pós)", val: "FASUL" },
+                { label: "💼 Seja um Afiliado / Trabalhe Conosco", val: "AFILIADO" },
+                { label: "💬 Falar no WhatsApp", val: "WHATSAPP_DIRETO" }
+            ]);
+        }
+
+        function tratarOpcao(val) {
+            if (val === "ESP") {
+                appendUserMsg("🚗 Cursos Especializados, NRs & Reciclagem");
+                estadoChat = "INTENCAO_ESP";
+                appendBotMsg("Os **Cursos Especializados Brasil** são 100% homologados pelo SENATRAN, válidos em todo o Brasil. Qual é o seu objetivo principal?", [
+                    { label: "A — Adquirir o curso para meu uso / habilitação", val: "COMPRAR_ESP" },
+                    { label: "B — Revender os cursos / Trabalhar como Afiliado", val: "AFILIADO" }
+                ]);
+            } else if (val === "COMPRAR_ESP") {
+                appendUserMsg("A — Adquirir o curso para meu uso");
+                estadoChat = "LISTA_ESP";
+                appendBotMsg("Perfeito! Confira os valores e selecione o curso desejado:", [
+                    { label: "MOPP — R$ 350,00", val: "mopp" },
+                    { label: "Transporte Escolar — R$ 350,00", val: "escolar" },
+                    { label: "Transporte Coletivo — R$ 350,00", val: "coletivo" },
+                    { label: "NR 35 — R$ 220,00", val: "nr35" }
+                ]);
+            } else if (val === "FASUL" || val === "IA" || val === "LIVRES") {
+                appendUserMsg("🎓 FASUL Educacional");
+                estadoChat = "MODALIDADE_FASUL";
+                appendBotMsg("A **FASUL Educacional** oferece cursos superiores, pós-graduação e capacitações com certificação de excelência para impulsionar sua carreira. Escolha a modalidade:", [
+                    { label: "1. Graduação", val: "F_GRAD" },
+                    { label: "2. Pós-Graduação", val: "F_POS" },
+                    { label: "3. Cursos Livres & Capacitação", val: "F_LIVRES" },
+                    { label: "4. Cursos de Inteligência Artificial (IA)", val: "F_IA" }
+                ]);
+            } else if (val.startsWith("F_")) {
+                estadoChat = "PERGUNTAR_NOME_CURSO_FASUL";
+                appendBotMsg("Qual é o **nome do curso** que você procura na FASUL? (Digite abaixo para eu buscar o link oficial de cadastro na planilha)");
+            } else if (val === "AFILIADO") {
+                appendUserMsg("💼 Seja um Afiliado / Trabalhe Conosco");
+                estadoChat = "FORM_AFILIADO_NOME";
+                appendBotMsg("Tabela Comercial de Revenda:<br>• Formação para parceiro: R$ 250,00<br>• Venda sugerida: R$ 350,00<br>• Margem sugerida: R$ 100,00 por aluno.");
+                appendBotMsg("Para encaminhar sua solicitação de afiliação, informe seu **nome completo**.");
+            } else if (val === "WHATSAPP_DIRETO") {
+                encaminharWhatsappDireto("Olá! Gostaria de falar com o suporte humano.");
+            } else if (PLANILHA_ESPECIALIZADOS[val]) {
+                cursoSelecionado = PLANILHA_ESPECIALIZADOS[val];
+                estadoChat = "FORM_ESP_NOME";
+                appendBotMsg(`Inscrição para **${cursoSelecionado.nome}** (R$ ${cursoSelecionado.preco.toFixed(2)}).<br><br>Por favor, digite seu **Nome Completo**:`);
+            }
+        }
+
+        function enviarMensagemTexto() {
+            const input = document.getElementById("chatInput");
+            const txt = input.value.trim();
+            if (!txt) return;
+
+            appendUserMsg(txt);
+            input.value = "";
+
+            if (estadoChat === "PERGUNTAR_NOME_CURSO_FASUL") {
+                let cursoAchado = null;
+                for (let k in PLANILHA_FASUL) {
+                    if (txt.toLowerCase().includes(k)) {
+                        cursoAchado = PLANILHA_FASUL[k];
+                        break;
+                    }
+                }
+                if (!cursoAchado) {
+                    cursoAchado = { nome: txt, link: "https://docs.google.com/spreadsheets/d/1y6JHACipvAPre6vJiR7aDiVfzYTDvUc2XbzBsYfF6Aw/edit?usp=drivesdk" };
+                }
+
+                cursoSelecionado = cursoAchado;
+                appendBotMsg(`Link Oficial de Cadastro da FASUL localizado:<br>👉 <strong>${cursoAchado.nome}</strong><a href="${cursoAchado.link}" target="_blank" class="btn-link-action">🔗 Abrir Link de Cadastro FASUL</a>`);
+                
+                setTimeout(() => {
+                    estadoChat = "CHECAR_ACESSO_FASUL";
+                    appendBotMsg(`Você conseguiu acessar o link de cadastro do curso <strong>${cursoAchado.nome}</strong>?`, [
+                        { label: "SIM, consegui acessar", val: "FASUL_SIM" },
+                        { label: "NÃO, preciso de ajuda", val: "FASUL_NAO" }
+                    ]);
+                }, 4000);
+
+            } else if (estadoChat === "FORM_ESP_NOME") {
+                dadosForm.nome = txt;
+                estadoChat = "FORM_ESP_CPF";
+                appendBotMsg("Obrigado! Agora digite o seu **CPF**:");
+            } else if (estadoChat === "FORM_ESP_CPF") {
+                dadosForm.cpf = txt;
+                estadoChat = "FORM_ESP_NASC";
+                appendBotMsg("Digite o seu **Ano de Nascimento**:");
+            } else if (estadoChat === "FORM_ESP_NASC") {
+                dadosForm.nasc = txt;
+                let msgWp = `*NOVA INSCRICAO - ${cursoSelecionado.nome}*%0ANome: ${dadosForm.nome}%0ACPF: ${dadosForm.cpf}%0ANascimento: ${dadosForm.nasc}%0ACNH: Anexa no WhatsApp`;
+                appendBotMsg("Perfeito! Clique no botão abaixo para enviar sua ficha e a foto da sua CNH diretamente no WhatsApp:");
+                appendBotMsg(`<a href="https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}" target="_blank" class="btn-link-action">📸 Enviar CNH no WhatsApp</a>`);
+            } else if (estadoChat === "FORM_AFILIADO_NOME") {
+                let msgWp = `*SOLICITACAO DE AFILIACAO*%0ANome: ${txt}`;
+                appendBotMsg(`Obrigado, ${txt}! Clique no botão abaixo para enviar sua solicitação de afiliação diretamente para nossa equipe:`);
+                appendBotMsg(`<a href="https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}" target="_blank" class="btn-link-action">💼 Concluir no WhatsApp</a>`);
+            } else if (estadoChat === "FORM_FASUL_NOME") {
+                dadosForm.nome = txt;
+                estadoChat = "FORM_FASUL_CPF";
+                appendBotMsg("Digite o seu **CPF**:");
+            } else if (estadoChat === "FORM_FASUL_CPF") {
+                dadosForm.cpf = txt;
+                estadoChat = "FORM_FASUL_NASC";
+                appendBotMsg("Digite o seu **Ano de Nascimento**:");
+            } else if (estadoChat === "FORM_FASUL_NASC") {
+                dadosForm.nasc = txt;
+                let msgWp = `*RESGATE CADASTRO FASUL*%0ACurso: ${cursoSelecionado ? cursoSelecionado.nome : 'FASUL'}%0ANome: ${dadosForm.nome}%0ACPF: ${dadosForm.cpf}%0ANascimento: ${dadosForm.nasc}`;
+                appendBotMsg("Coletamos seus dados! Clique abaixo para finalizar seu atendimento com o suporte humano:");
+                appendBotMsg(`<a href="https://wa.me/${WHATSAPP_SUPORTE}?text=${msgWp}" target="_blank" class="btn-link-action">💬 Falar com Suporte FASUL</a>`);
+            } else {
+                encaminharWhatsappDireto(txt);
+            }
+        }
+
+        function tratarOpcaoAcesso(resposta) {
+            if (resposta === "FASUL_SIM") {
+                appendUserMsg("SIM, consegui acessar");
+                appendBotMsg("🎉 Excelente! O Portal Cursos EAD e o Edu agradecem seu contato. Bons estudos! 🚀");
+            } else if (resposta === "FASUL_NAO") {
+                appendUserMsg("NÃO, preciso de ajuda");
+                estadoChat = "FORM_FASUL_NOME";
+                appendBotMsg("Entendido! Vamos te ajudar pessoalmente.<br>Por favor, digite o seu **Nome Completo**:");
+            }
+        }
+
+        const _tratarOpcaoOriginal = tratarOpcao;
+        tratarOpcao = function(val) {
+            if (val === "FASUL_SIM" || val === "FASUL_NAO") {
+                tratarOpcaoAcesso(val);
+            } else {
+                _tratarOpcaoOriginal(val);
+            }
+        };
+
+        function encaminharWhatsappDireto(txt) {
+            let msg = encodeURIComponent(`Olá, Edu! Preciso de ajuda com: ${txt}`);
+            window.open(`https://wa.me/${WHATSAPP_SUPORTE}?text=${msg}`, '_blank');
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') enviarMensagemTexto();
+        }
+    </script>
+</body>
+</html>
